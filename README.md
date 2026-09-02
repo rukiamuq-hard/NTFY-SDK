@@ -5,8 +5,7 @@
 **A lightweight Go SDK for sending notifications through your own NTFY server**
 
 [![Go Reference](https://img.shields.io/badge/go-reference-blue?logo=go)](https://github.com/rukiamuq-hard/NTFY-SDK)
-[![Go Version](https://img.shields.io/badge/go-%3E%3D1.21-00ADD8?logo=go)](https://github.com/rukiamuq-hard/NTFY-SDK/blob/main/go.mod)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Go Version](https://img.shields.io/badge/go-%3E%3D1.26.3-00ADD8?logo=go)](https://github.com/rukiamuq-hard/NTFY-SDK/blob/main/go.mod)
 [![Stars](https://img.shields.io/github/stars/rukiamuq-hard/NTFY-SDK?style=social)](https://github.com/rukiamuq-hard/NTFY-SDK/stargazers)
 
 Simple, dependency-free, production-ready.
@@ -31,7 +30,7 @@ Simple, dependency-free, production-ready.
 go get github.com/rukiamuq-hard/NTFY-SDK
 ```
 
-Requires Go 1.21 or later.
+Requires Go 1.26.3 or higher.
 
 ---
 
@@ -110,13 +109,6 @@ type TelegramRequest struct {
 	Message string `json:"message"`
 }
 ```
-
-| Field     | Type     | Description                     |
-|-----------|----------|----------------------------------|
-| `Token`   | `string` | Telegram bot token               |
-| `ChatID`  | `int64`  | Telegram chat or user ID         |
-| `Message` | `string` | Message text to send             |
-
 ### Working with context
 
 All client methods accept a `context.Context`, allowing you to control timeouts and cancellation:
@@ -141,18 +133,6 @@ NTFY-SDK/
 ├── telegram.go   # Client.Telegram implementation
 └── go.mod
 ```
-
----
-
-## Contributing
-
-Pull requests and issues are welcome. If you'd like to add a new notification channel (Discord, Slack, Email, Webhook, etc.), feel free to open a pull request.
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/discord`)
-3. Commit your changes (`git commit -m 'Add Discord support'`)
-4. Push the branch (`git push origin feature/discord`)
-5. Open a Pull Request
 
 ---
 
