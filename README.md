@@ -133,9 +133,3 @@ NTFY-SDK/
 ├── telegram.go   # Client.Telegram implementation
 └── go.mod
 ```
-
----
-
-## License
-
-No license file is currently included in the repository. Confirm licensing terms with the author before using this project in production.
