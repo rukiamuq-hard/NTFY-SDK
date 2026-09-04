@@ -8,11 +8,12 @@
 [![Go Version](https://img.shields.io/badge/go-%3E%3D1.26.3-00ADD8?logo=go)](https://github.com/rukiamuq-hard/NTFY-SDK/blob/main/go.mod)
 [![Stars](https://img.shields.io/github/stars/rukiamuq-hard/NTFY-SDK?style=social)](https://github.com/rukiamuq-hard/NTFY-SDK/stargazers)
 
+![GitHub repo size](https://img.shields.io/github/repo-size/rukiamuq-hard/NTFY-SDK)
+![GitHub last commit](https://img.shields.io/github/last-commit/rukiamuq-hard/NTFY-SDK)
+
 Simple, dependency-free, production-ready.
 
 </div>
-
----
 
 ## Features
 
@@ -22,8 +23,6 @@ Simple, dependency-free, production-ready.
 - **Easy to extend** — straightforward to add new notification channels (Discord, Slack, Email, etc.)
 - **Single client for all channels** — one entry point via `ntfy.New()`
 
----
-
 ## Installation
 
 ```bash
@@ -31,8 +30,6 @@ go get github.com/rukiamuq-hard/NTFY-SDK
 ```
 
 Requires Go 1.26.3 or higher.
-
----
 
 ## Quick Start
 
@@ -71,8 +68,6 @@ func main() {
 	}
 }
 ```
-
----
 
 ## Usage
 
@@ -120,8 +115,6 @@ if err := client.Telegram(ctx, req); err != nil {
 	// handle error/timeout
 }
 ```
-
----
 
 ## Project Structure
 
