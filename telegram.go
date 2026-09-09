@@ -30,5 +30,6 @@ func (c *Client) Telegram(ctx context.Context, req TelegramRequest) error {
 		return fmt.Errorf("server returned status %d", res.StatusCode)
 	}
 
+	fmt.Println("Sent is successful!")
 	return nil
 }

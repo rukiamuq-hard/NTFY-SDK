@@ -30,5 +30,6 @@ func (c *Client) Discord(ctx context.Context, dr DiscordRequest) error {
 		return fmt.Errorf("server returned status %d", res.StatusCode)
 	}
 
+	fmt.Println("Sent is successful!")
 	return nil
 }
