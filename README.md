@@ -2,28 +2,26 @@
 
 # NTFY-SDK
 
-**A lightweight Go SDK for sending notifications through your own NTFY server**
+**A lightweight Go SDK for sending notifications through your own [NTFY-Service](https://github.com/rukiamuq-hard/NTFY-Service)**
 
 [![Go Reference](https://img.shields.io/badge/go-reference-blue?logo=go)](https://github.com/rukiamuq-hard/NTFY-SDK)
-[![Go Version](https://img.shields.io/badge/go-%3E%3D1.21-00ADD8?logo=go)](https://github.com/rukiamuq-hard/NTFY-SDK/blob/main/go.mod)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Go Version](https://img.shields.io/badge/go-%3E%3D1.26.3-00ADD8?logo=go)](https://github.com/rukiamuq-hard/NTFY-SDK/blob/main/go.mod)
 [![Stars](https://img.shields.io/github/stars/rukiamuq-hard/NTFY-SDK?style=social)](https://github.com/rukiamuq-hard/NTFY-SDK/stargazers)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/rukiamuq-hard/NTFY-SDK)
+![GitHub last commit](https://img.shields.io/github/last-commit/rukiamuq-hard/NTFY-SDK)
 
 Simple, dependency-free, production-ready.
 
 </div>
 
----
-
 ## Features
 
 - **Minimal design** — no external dependencies, only the Go standard library
-- **Telegram support out of the box** — send messages to Telegram chats through your NTFY server
+- **Telegram support out of the box** — send messages to Telegram chats through your [NTFY-Service](https://github.com/rukiamuq-hard/NTFY-Service)
 - **Full `context.Context` support** — timeouts and cancellation built in
 - **Easy to extend** — straightforward to add new notification channels (Discord, Slack, Email, etc.)
 - **Single client for all channels** — one entry point via `ntfy.New()`
-
----
 
 ## Installation
 
@@ -31,9 +29,7 @@ Simple, dependency-free, production-ready.
 go get github.com/rukiamuq-hard/NTFY-SDK
 ```
 
-Requires Go 1.21 or later.
-
----
+Requires Go 1.26.3 or higher.
 
 ## Quick Start
 
@@ -69,12 +65,9 @@ func main() {
 	})
 	if err != nil {
 		log.Fatal(err)
-		return
 	}
 }
 ```
-
----
 
 ## Usage
 
@@ -84,7 +77,7 @@ func main() {
 client := ntfy.New("localhost:8080")
 ```
 
-`ntfy.New` accepts the base address of your NTFY server and returns a ready-to-use `*ntfy.Client`.
+`ntfy.New` accepts the base address of your [NTFY-Service](https://github.com/rukiamuq-hard/NTFY-Service) and returns a ready-to-use `*ntfy.Client`.
 
 ### Sending a Telegram notification
 
@@ -110,13 +103,6 @@ type TelegramRequest struct {
 	Message string `json:"message"`
 }
 ```
-
-| Field     | Type     | Description                     |
-|-----------|----------|----------------------------------|
-| `Token`   | `string` | Telegram bot token               |
-| `ChatID`  | `int64`  | Telegram chat or user ID         |
-| `Message` | `string` | Message text to send             |
-
 ### Working with context
 
 All client methods accept a `context.Context`, allowing you to control timeouts and cancellation:
@@ -130,8 +116,6 @@ if err := client.Telegram(ctx, req); err != nil {
 }
 ```
 
----
-
 ## Project Structure
 
 ```
@@ -141,21 +125,3 @@ NTFY-SDK/
 ├── telegram.go   # Client.Telegram implementation
 └── go.mod
 ```
-
----
-
-## Contributing
-
-Pull requests and issues are welcome. If you'd like to add a new notification channel (Discord, Slack, Email, Webhook, etc.), feel free to open a pull request.
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/discord`)
-3. Commit your changes (`git commit -m 'Add Discord support'`)
-4. Push the branch (`git push origin feature/discord`)
-5. Open a Pull Request
-
----
-
-## License
-
-No license file is currently included in the repository. Confirm licensing terms with the author before using this project in production.
